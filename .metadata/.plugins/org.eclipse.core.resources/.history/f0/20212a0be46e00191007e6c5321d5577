@@ -1,0 +1,34 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private EntityManager em;
+
+	public StudentCourseRepositoryImpl(EntityManager em) {
+		this.em = em;
+	}
+	  
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		String sql = "select s.id, c.id, " + 
+				"			s.name, " + 
+				"            c.name " + 
+				"from student_course sc inner join student s on sc.student_id = s.id " + 
+				"			inner join course c on sc.course_id = c.id " + 
+				"where s.name like concat ('%', :studentName, '%')";
+		
+		TypedQuery<StudentCourseEntity> query = em.createQuery(sql, StudentCourseEntity.class)
+				.setParameter(":studentName", studentName);
+		
+		return query.getResultList();
+	}
+
+}

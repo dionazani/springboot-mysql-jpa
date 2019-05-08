@@ -1,0 +1,37 @@
+package org.abccourse.serviceimpl.master;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.abccourse.entity.CourseEntity;
+import org.abccourse.model.master.CourseModel;
+import org.abccourse.model.master.StudentCourseModel;
+import org.abccourse.service.master.StudentCourseService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class StudentCourseServiceImpl implements StudentCourseService {
+
+	@Autowired
+	private StudentCourseService studentCourseService;
+	
+	@Override
+	public List<StudentCourseModel> getStudentCourseByStudentName(String studentName) {
+List<CourseEntity> courseEntitieList = courseRepository.findByName(name);
+		
+		List<CourseModel> courseModelList = null;
+		if (!courseEntitieList.isEmpty()) {
+			
+			courseModelList = new ArrayList<CourseModel>();
+			
+			ModelMapper modelMapper = new ModelMapper();
+			Type targetType = new TypeToken<List<CourseModel>>() {}.getType();
+			courseModelList = modelMapper.map(courseEntitieList, targetType);
+		}
+		
+		return courseModelList;
+	}
+
+}

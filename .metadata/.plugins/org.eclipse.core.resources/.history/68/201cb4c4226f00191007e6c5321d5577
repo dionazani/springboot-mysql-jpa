@@ -1,0 +1,11 @@
+package org.abccourse.entity.transaction;
+
+public class CourseRegistration {
+
+	private int studentId;
+	private int courseId;
+	private String studentName;
+	private String courseName;
+	
+	
+}

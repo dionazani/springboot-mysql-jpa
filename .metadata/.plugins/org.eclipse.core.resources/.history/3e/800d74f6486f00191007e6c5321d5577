@@ -1,0 +1,10 @@
+package org.abccourse.repository.transaction;
+
+import java.util.List;
+import org.abccourse.entity.transaction.CourseRegistration;
+
+public interface CourseRegistrationRepository {
+
+	List<CourseRegistration> findCourseRegistrationByStudentName(String studentName);
+	boolean insertStudentCourse(int studentId, int courseId);
+}

@@ -1,0 +1,25 @@
+1556780670565	Rename package 'org.abccourse.controller.transaction'
+1556784606396	Rename package 'com.abccourse.entity'
+1556786571617	Delete element
+1556871482056	Rename type 'CourseController'
+1556871545498	Rename type 'CourseRestController'
+1556872391203	Delete element
+1556874918363	Delete element
+1556876180804	Move compilation unit
+1556876207269	Rename package 'org.abcccourse.entity.student'
+1556893789525	Rename type 'CourseController'
+1556894705434	Delete element
+1556894748247	Delete element
+1556894804989	Delete element
+1556894819957	Delete element
+1556896821402	Rename type 'StudentCourseRestController'
+1556897083091	Delete element
+1556897097993	Delete element
+1556897138457	Move compilation unit
+1556897161031	Move compilation unit
+1556897322297	Delete element
+1556897597718	Delete element
+1556897916145	Delete element
+1556897999873	Delete element
+1556898005950	Delete element
+1556898197602	Rename method 'findByName'

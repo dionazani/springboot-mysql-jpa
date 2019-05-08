@@ -1,0 +1,5 @@
+package org.abccourse.repository.master.impl;
+
+public class StudentRepositoryImpl implements StudentRepository {
+
+}

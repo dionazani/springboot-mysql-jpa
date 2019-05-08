@@ -1,0 +1,6 @@
+package com.abccourse.entity;
+
+@Entity
+public class CourseEntity {
+
+}

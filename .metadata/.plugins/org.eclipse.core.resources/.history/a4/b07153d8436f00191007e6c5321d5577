@@ -1,0 +1,55 @@
+package org.abccourse.serviceimpl.transaction;
+
+import java.lang.reflect.Type;
+import java.util.List;
+
+import org.abccourse.entity.StudentCourse;
+import org.abccourse.entity.transaction.CourseRegistration;
+import org.abccourse.model.master.CourseModel;
+import org.abccourse.model.master.StudentModel;
+import org.abccourse.model.transaction.CourseRegistrationModel;
+import org.abccourse.repository.StudentCourseRepository;
+import org.abccourse.repository.StudentRepository;
+import org.abccourse.repository.transaction.CourseRegistrationRepository;
+import org.abccourse.service.transaction.CourseRegistrationService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class CourseRegistrationServiceImpl implements CourseRegistrationService {
+
+	@Autowired
+	private CourseRegistrationRepository courseRegistrationRepository;
+	
+	@Autowired 
+	private StudentCourseRepository studentCourseRepository;
+	
+	@Override
+	public List<CourseRegistrationModel> getStudentCourseByStudentName(String studentName) {
+		List<CourseRegistration> courseRegistrationList = courseRegistrationRepository.findCourseRegistrationByStudentName(studentName);
+
+		List<CourseRegistrationModel> courseRegistrationModelList = null;
+		if (!courseRegistrationList.isEmpty()) {
+			
+			ModelMapper modelMapper = new ModelMapper();
+			Type targetType = new TypeToken<List<CourseRegistrationModel>>() {}.getType();
+			courseRegistrationModelList = modelMapper.map(courseRegistrationList, targetType);
+		}
+		
+		return courseRegistrationModelList;
+	}
+
+	@Override
+	@Transactional
+	public boolean addNewCourseRegistration(int studentId, int courseId) {
+		StudentCourse entity = new StudentCourse();
+		entity.setStudentId(studentId);
+		entity.setCourseId(courseId);
+		
+		studentCourseRepository.save(entity);
+	}
+
+}

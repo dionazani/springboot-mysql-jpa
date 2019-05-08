@@ -1,0 +1,33 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private EntityManager em;
+
+	public StudentCourseRepositoryImpl(EntityManager em) {
+		this.em = em;
+	}
+	  
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		String sql = "select student.id, course.id, \n" + 
+				"			student.name, \n" + 
+				"            course.name \n" + 
+				"from student_course inner join student on student_course.student_id = student.id \n" + 
+				"			inner join course on student_course.course_id = course.id ;\n" + 
+				"where student.name like '%Adi%'"
+		TypedQuery<StudentCourseEntity> query = em.createQuery("SELECT e FROM Employee e", StudentCourseEntity.class);
+		return query.getResultList();
+	}
+
+}

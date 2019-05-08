@@ -1,0 +1,10 @@
+package org.abccourse.model.transaction;
+
+public class StudentModel {
+
+	private int id;
+	private String code;
+	private String name;
+	private int courseId;
+	
+}

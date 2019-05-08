@@ -1,0 +1,42 @@
+package org.abccourse.serviceimpl.master;
+
+import java.lang.reflect.Type;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.model.master.StudentCourseModel;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.abccourse.repositoryimpl.master.StudentCourseRepositoryImpl;
+import org.abccourse.service.master.StudentCourseService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+
+public class StudentCourseServiceImpl implements StudentCourseService{
+
+	private StudentCourseRepository studentCourseRepository;
+
+	@Override
+	public List<StudentCourseModel> getStudentCourseByStudentName(String studentName) {
+		
+		List<StudentCourseModel> studentCourseModelList = null;
+		
+		EntityManagerFactory emf = Persistence
+		        .createEntityManagerFactory("EmployeeService");
+		EntityManager em = emf.createEntityManager();
+		
+		this.studentCourseRepository = new StudentCourseRepositoryImpl(em);
+		List<StudentCourseEntity> studentCourseEntityList = this.studentCourseRepository.findStudentCourseByStudentName(studentName);
+		
+		ModelMapper modelMapper = new ModelMapper();
+		Type targetType = new TypeToken<List<StudentCourseModel>>() {}.getType();
+		studentCourseModelList = modelMapper.map(studentCourseEntityList, targetType);
+		
+		return studentCourseModelList;
+		
+	}
+
+	
+}

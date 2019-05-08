@@ -1,0 +1,8 @@
+package org.abccourse.repository.master;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository implements CrudRepository<StudentEntity, Integer>{
+
+}

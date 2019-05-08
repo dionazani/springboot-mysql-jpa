@@ -1,0 +1,19 @@
+package org.abccourse.repository.master.impl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.abccourse.entity.Student;
+import org.abccourse.repository.StudentRepository;
+
+public class StudentRepositoryImpl implements StudentRepository {
+
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	public short saveStudent(Student entity) {
+		
+	}
+
+}

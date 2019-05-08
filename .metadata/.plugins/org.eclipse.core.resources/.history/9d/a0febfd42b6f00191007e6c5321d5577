@@ -1,0 +1,43 @@
+package org.abccourse.controller.transaction;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.abccourse.model.master.StudentCourseModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("courseRegistration")
+public class CourseRegostrationRestController {
+
+	@GetMapping("/getStudentCourse")
+	public ResponseEntity<?> getStudentCourseStudentByName(@RequestParam String studentName) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<StudentCourseModel> studentCourseModelList = null;
+
+		String message = "";
+		
+		try {
+			studentCourseModelList = courseService.getStudentCourseByStudentName(studentName);
+			map.put("message", message);
+			map.put("contents", studentCourseModelList);
+		}
+		catch(Exception ex) {
+			message = ex.getMessage();
+			
+			map.put("message", message);
+			map.put("contents", studentCourseModelList);
+			
+			return new ResponseEntity<Object>(map, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<Object>(map, HttpStatus.OK);
+		
+	}
+}

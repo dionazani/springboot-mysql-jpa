@@ -1,0 +1,73 @@
+1557025823360	Delete element
+1557026133138	Delete element
+1557026139996	Delete element
+1557026164212	Delete element
+1557026333607	Delete element
+1557027051023	Delete element
+1557034218422	Rename type 'StudentEntity'
+1557034225423	Rename type 'CourseEntity'
+1557034232393	Rename type 'StudentCourseEntity'
+1557038110527	Rename type 'StudentCourse'
+1557038112843	Copy compilation unit
+1557038119778	Move compilation unit
+1557038128332	Delete element
+1557038144356	Delete element
+1557039299436	Delete element
+1557039420456	Delete element
+1557052438001	Move package
+1557052459706	Rename package 'org.abccourse.serviceimpl.master'
+1557052462512	Move package
+1557052483141	Move package
+1557052536760	Move package
+1557052781397	Delete element
+1557052811977	Rename package 'org.abccourse.repository.transactions'
+1557052976404	Rename type 'StudentCourse'
+1557052981401	Move compilation unit
+1557053032776	Delete element
+1557053234642	Rename type 'StudentCourseRepository'
+1557053250556	Rename type 'StudentCourseRepositoryImpl'
+1557053341645	Copy compilation unit
+1557053355762	Rename type 'StudentCourseModel'
+1557056204948	Rename package 'org.abccourse.service.transaction.impl'
+1557056219567	Rename package 'org.abccourse.repository.transaction.impl'
+1557056260012	Rename package 'org.abccourse.service.master.impl'
+1557057139204	Rename type 'CourseRegostrationRestController'
+1557061497241	Rename package 'org.abccourse.repository.master'
+1557066593516	Rename package 'org.abccourse.model.master'
+1557066623929	Rename package 'org.abccourse.model'
+1557067140320	Move compilation unit
+1557068450385	Delete element
+1557068480432	Delete element
+1557069196734	Delete element
+1557069477550	Rename method 'insertStudentCourse'
+1557069505353	Rename method 'addNewCourseRegistration'
+1557069512690	Rename method 'getStudentCourseByStudentName'
+1557069526062	Rename method 'getStudentCourseByStudentName'
+1557069547761	Rename method 'addNewCourseRegistration'
+1557069641654	Delete element
+1557109800250	Rename package 'org.abccourse.serviceimpl.master'
+1557109812652	Rename package 'org.abccourse.serviceimpl.transaction'
+1557109831049	Rename package 'org.abccourse.repositoryimpl.transaction'
+1557203154475	Rename local variable 'entity'
+1557203230436	Rename method 'addNewStudentCourse'
+1557211335709	Rename package 'org.abccourse.controller.master'
+1557211348385	Rename package 'org.abccourse.controller.transaction'
+1557211368683	Rename type 'CourseRestController'
+1557211380232	Rename type 'CourseRegistrationRestController'
+1557211404418	Rename type 'StudentTc'
+1557223927613	Rename type 'CourseRepository'
+1557223936304	Rename type 'StudentRepository'
+1557223947017	Rename type 'CourseRegistrationRepository'
+1557223957851	Rename type 'CourseService'
+1557223964995	Rename type 'StudentService'
+1557223978309	Rename type 'StudentRepositoryImpl'
+1557223989554	Rename type 'CourseRegistrationRepositoryImpl'
+1557224001637	Rename type 'CourseServiceImpl'
+1557224011182	Rename type 'StudentServiceImpl'
+1557224021925	Rename type 'CourseRegistrationServiceImpl'
+1557224076483	Rename field 'courseRepository'
+1557224113406	Rename field 'studentRepository'
+1557224128826	Rename field 'courseRegistrationRepository'
+1557224266023	Rename type 'CourseRegistrationService'
+1557224488103	Rename method 'addStudentCourse'
+1557224532677	Rename method 'addNewStudent'

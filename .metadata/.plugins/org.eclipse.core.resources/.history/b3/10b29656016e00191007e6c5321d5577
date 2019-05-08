@@ -1,0 +1,11 @@
+package org.abccourse.service.master;
+
+import java.util.List;
+import org.abccourse.model.master.StudentCourseModel;
+import org.springframework.stereotype.Service;
+
+@Service
+public interface StudentCourseService {
+
+	List<StudentCourseModel> getStudentCourseByStudentName(String name);
+}

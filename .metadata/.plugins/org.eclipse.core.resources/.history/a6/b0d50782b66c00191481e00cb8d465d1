@@ -1,0 +1,12 @@
+package org.abccourse.service.master;
+
+import java.sql.Timestamp;
+
+public interface CourseService {
+
+	private int id;
+	private String code;
+	private String name;
+	private Timestamp createdTime;
+	private Timestamp modifiedTime;
+}

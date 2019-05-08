@@ -1,0 +1,9 @@
+package org.abccourse.repository;
+
+import org.springframework.stereotype.Repository;
+import org.abccourse.entity.*;
+
+@Repository
+public class StudentCourseRepository extends JpaRepository<StudentCourse, Integer>{
+
+}

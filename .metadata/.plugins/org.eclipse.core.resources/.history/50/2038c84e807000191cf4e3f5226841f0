@@ -1,0 +1,5 @@
+package org.abccourse.service.master.impl;
+
+public class StudentServiceImpl {
+
+}

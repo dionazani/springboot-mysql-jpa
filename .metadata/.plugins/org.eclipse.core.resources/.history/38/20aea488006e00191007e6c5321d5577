@@ -1,0 +1,20 @@
+package org.abccourse.serviceimpl.master;
+
+import java.util.List;
+
+import org.abccourse.model.master.StudentCourseModel;
+import org.abccourse.service.master.StudentCourseService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentCourseServiceImpl implements StudentCourseService{
+
+	private 
+	@Override
+	public List<StudentCourseModel> getStudentCourseByStudentName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

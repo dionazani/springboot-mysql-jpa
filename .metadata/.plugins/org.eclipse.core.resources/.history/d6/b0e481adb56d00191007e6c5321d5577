@@ -1,0 +1,14 @@
+package org.abccourse;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@ComponentScan(basePackages = {"com.dnasakti.*"})
+public class AbcCourseApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AbcCourseApplication.class, args);
+	}
+
+}

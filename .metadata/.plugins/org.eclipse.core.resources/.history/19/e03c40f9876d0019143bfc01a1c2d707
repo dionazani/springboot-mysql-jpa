@@ -1,0 +1,9 @@
+package org.abccourse.repositoryimpl.master;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class StudentCourseRepositoryImpl {
+
+	private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("studentCourse");
+}

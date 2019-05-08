@@ -1,0 +1,12 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/abc-course?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+spring.datasource.username=dion
+spring.datasource.password=Dion1234
+
+spring.datasource.tomcat.max-wait=20000
+spring.datasource.tomcat.max-active=50
+spring.datasource.tomcat.max-idle=20
+spring.datasource.tomcat.min-idle=15
+
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+server.port=8085

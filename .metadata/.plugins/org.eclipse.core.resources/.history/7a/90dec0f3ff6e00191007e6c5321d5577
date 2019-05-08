@@ -1,0 +1,69 @@
+package org.abccourse.serviceimpl.master;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.abcccourse.entity.master.StudentHasCourse;
+import org.abccourse.entity.Course;
+import org.abccourse.model.master.CourseModel;
+import org.abccourse.model.master.StudentCourseModel;
+import org.abccourse.repository.master.CourseRepository;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.abccourse.service.master.CourseService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseServiceImpl implements CourseService {
+
+	@Autowired
+	private CourseRepository courseRepository;
+	
+	@Autowired
+	private StudentCourseRepository studentCourseRepository;
+	
+	@Override
+	public CourseModel getCourseByCode(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CourseModel> getCourseByName(String name) {
+		List<Course> courseList = courseRepository.findCourseByName(name);
+
+		List<CourseModel> courseModelList = null;
+		if (!courseList.isEmpty()) {
+			
+			ModelMapper modelMapper = new ModelMapper();
+			Type targetType = new TypeToken<List<CourseModel>>() {}.getType();
+			courseModelList = modelMapper.map(courseList, targetType);
+		}
+		
+		return courseModelList;
+	
+	}
+
+	@Override
+	public List<StudentCourseModel> getStudentCourseByStudentName(String studentName) {
+		List<StudentHasCourse> studentCourseList = studentCourseRepository.findStudentCourseByStudentName(studentName);
+
+		List<StudentCourseModel> studentCourseModelList = null;
+		if (!studentCourseList.isEmpty()) {
+			
+			ModelMapper modelMapper = new ModelMapper();
+			Type targetType = new TypeToken<List<StudentCourseModel>>() {}.getType();
+			studentCourseModelList = modelMapper.map(studentCourseList, targetType);
+		}
+		
+		return studentCourseModelList;
+	}
+
+}

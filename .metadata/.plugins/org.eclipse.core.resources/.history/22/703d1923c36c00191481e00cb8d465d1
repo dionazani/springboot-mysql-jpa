@@ -1,0 +1,6 @@
+package org.abccourse.service.master;
+
+public interface CourseService {
+
+	
+}

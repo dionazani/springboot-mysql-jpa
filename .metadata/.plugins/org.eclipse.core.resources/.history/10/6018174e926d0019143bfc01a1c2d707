@@ -1,0 +1,7 @@
+package org.abccourse.service.master;
+
+public interface StudentCourseService {
+	
+	List<StudentCourseModel> getStudentCourseByStudentName(String studentName);
+
+}

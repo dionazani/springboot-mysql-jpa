@@ -1,0 +1,22 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("studentCourse");
+
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

@@ -1,0 +1,26 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	protected EntityManager em;
+
+	public StudentCourseRepositoryImpl(EntityManager em) {
+		this.em = em;
+	}
+	  
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

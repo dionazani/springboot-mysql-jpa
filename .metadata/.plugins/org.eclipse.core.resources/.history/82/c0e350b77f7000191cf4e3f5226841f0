@@ -1,0 +1,17 @@
+package org.abccourse.repository.master.impl;
+
+import org.abccourse.entity.Student;
+import org.abccourse.repository.StudentRepository;
+
+public class StudentRepositoryImpl implements StudentRepository {
+
+	@PersistenceContex
+	EntityManager em;
+	
+	@Override
+	public short saveStudent(Student entity) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

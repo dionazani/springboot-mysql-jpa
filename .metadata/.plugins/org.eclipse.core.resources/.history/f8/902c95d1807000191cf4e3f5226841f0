@@ -1,0 +1,13 @@
+package org.abccourse.service.master.impl;
+
+import org.abccourse.model.master.StudentModel;
+import org.abccourse.service.master.StudentService;
+
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public short saveStudent(StudentModel student) {
+		
+	}
+
+}

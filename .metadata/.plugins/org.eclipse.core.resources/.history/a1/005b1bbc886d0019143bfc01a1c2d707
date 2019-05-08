@@ -1,0 +1,25 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("studentCourse");
+
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		
+		String sql = "select student.id, course.id, student.name, course.name from student_course inner join"
+		EntityManager em = entityManagerFactory.createEntityManager();
+		Query query = em.createQuery("select")
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package org.abccourse.entity.master;
+
+public class CourseRegistration {
+
+}

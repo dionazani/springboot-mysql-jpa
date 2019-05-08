@@ -1,0 +1,19 @@
+package org.abccourse.entity.transaction;
+
+public class CourseRegistration {
+
+	private int studentId;
+	private int courseId;
+	private String studentName;
+	private String courseName;
+	
+	public int getCourseId() {
+		return courseId;
+	}
+	
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+	
+	
+}

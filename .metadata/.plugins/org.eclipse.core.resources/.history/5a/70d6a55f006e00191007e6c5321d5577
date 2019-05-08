@@ -1,0 +1,9 @@
+package org.abccourse.serviceimpl.master;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentCourseServiceImpl {
+
+	
+}

@@ -1,0 +1,9 @@
+package org.abccourse.repository.transaction;
+
+import org.abccourse.entity.StudentCourse;
+import org.springframework.data.repository.CrudRepository;
+
+public interface StudentCourseRepository extends CrudRepository<StudentCourse, Integer>{
+
+	List<org.abccourse.entity.master.StudentCourseEntity>
+}

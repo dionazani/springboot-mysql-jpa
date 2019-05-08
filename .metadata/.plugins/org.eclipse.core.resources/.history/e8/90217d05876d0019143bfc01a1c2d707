@@ -1,0 +1,5 @@
+package org.abccourse.model.master;
+
+public class StudentCourseModel {
+
+}

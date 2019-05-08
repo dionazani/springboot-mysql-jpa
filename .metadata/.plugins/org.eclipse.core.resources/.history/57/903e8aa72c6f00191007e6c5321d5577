@@ -1,0 +1,12 @@
+package org.abccourse.repository.transaction;
+
+import java.util.List;
+
+import org.abccourse.entity.StudentCourse;
+import org.abccourse.entity.transaction.CourseRegistration;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CourseRegistrationRepository extends CrudRepository<CourseRegistration, Integer>{
+
+	List<CourseRegistration> findCourseRegistrationByStudentName(String studentName);
+}

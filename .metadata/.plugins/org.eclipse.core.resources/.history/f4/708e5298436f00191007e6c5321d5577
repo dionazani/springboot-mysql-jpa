@@ -1,0 +1,12 @@
+package org.abccourse.service.transaction;
+
+import java.util.List;
+
+import org.abccourse.model.master.StudentModel;
+import org.abccourse.model.transaction.CourseRegistrationModel;
+
+public interface CourseRegistrationService {
+
+	List<CourseRegistrationModel> getStudentCourseByStudentName(String studentName);
+	boolean addNewCourseRegistration(StudentModel studenModel);
+}

@@ -1,0 +1,5 @@
+package org.abccourse.rest.master;
+
+public class StudentTc {
+
+}

@@ -1,0 +1,50 @@
+package org.abccourse.repositoryimpl.transaction;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import org.abccourse.entity.transaction.CourseRegistration;
+import org.abccourse.repository.transaction.CourseRegistrationRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CourseRegistrationRepositoryImpl implements CourseRegistrationRepository{
+
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	public List<CourseRegistration> findCourseRegistrationByStudentName(String studentName) {
+
+		String sql = "select student.id as student_id, " + 
+				"course.id as course_id, " + 
+				"student.name as student_name, " + 
+				"course.name as course_name " + 
+				"from student_course inner join student on student_course.student_id = student.id inner join " + 
+				"course on student_course.course_id = course.id where student.name like concat ('%', 'Adi', '%')";
+		
+		Query q = em.createNativeQuery(sql);
+		
+		List<CourseRegistration> list = (List<CourseRegistration>)q.getResultList();;
+
+		List<Object[]> courses = q.getResultList();
+
+		for (Object[] a : courses) {
+
+			CourseRegistration entity = new CourseRegistration();
+			entity.setStudentId((int) a[0]);
+			entity.setCourseId((int) a[1]);
+			entity.setStudentName(String.valueOf(a[2]));
+			entity.setCourseName(String.valueOf(a[3]));
+			
+			list.add(entity);
+			
+		}
+	
+		
+		return list;
+	}
+
+}

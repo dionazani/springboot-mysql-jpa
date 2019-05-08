@@ -1,0 +1,6 @@
+package org.abccourse.entity;
+
+@Entity
+public class StudentCourseEntity {
+
+}

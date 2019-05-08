@@ -1,0 +1,84 @@
+package org.abccourse.serviceimpl.master;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.abccourse.entity.Course;
+import org.abccourse.model.master.CourseModel;
+import org.abccourse.model.master.StudentCourseModel;
+import org.abccourse.repository.master.CourseRepository;
+import org.abccourse.service.master.CourseService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseServiceImpl implements CourseService {
+
+	@Autowired
+	private CourseRepository courseRepository;
+	
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	public CourseModel getCourseByCode(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CourseModel> getCourseByName(String name) {
+		List<Course> courseList = courseRepository.findCourseByName(name);
+
+		List<CourseModel> courseModelList = null;
+		if (!courseList.isEmpty()) {
+			
+			ModelMapper modelMapper = new ModelMapper();
+			Type targetType = new TypeToken<List<CourseModel>>() {}.getType();
+			courseModelList = modelMapper.map(courseList, targetType);
+		}
+		
+		return courseModelList;
+	
+	}
+
+	@Override
+	public List<StudentCourseModel> getStudentCourseByStudentName(String studentName) {
+		
+		String sql = "select student.id as student_id, " + 
+				"course.id as course_id, " + 
+				"student.name as student_name, " + 
+				"course.name as course_name " + 
+				"from student_course inner join student on student_course.student_id = student.id inner join \" + \n" + 
+				"course on student_course.course_id = course.id where student.name like concat ('%', :studentName, '%')\"";
+		
+		Query q = em.createNativeQuery(sql).setParameter("studentName", studentName);
+		
+		List<StudentCourseModel> list = new ArrayList<StudentCourseModel>();
+		
+		List<Object[]> authors = q.getResultList();
+		for (Object[] a : authors) {
+
+			StudentCourseModel model = new StudentCourseModel();
+			model.setStudentId((int) a[0]);
+			model.setCourseId((int) a[1]);
+			model.setStudentName(String.valueOf(a[2]));
+			model.setCourseName(String.valueOf(a[3]));
+			
+			list.add(model);
+			
+		}
+		
+		return list;
+
+	}
+
+}

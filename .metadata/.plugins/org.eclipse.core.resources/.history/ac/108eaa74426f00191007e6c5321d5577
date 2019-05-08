@@ -1,0 +1,5 @@
+package org.abccourse.model.transaction;
+
+public class StudentModel {
+
+}

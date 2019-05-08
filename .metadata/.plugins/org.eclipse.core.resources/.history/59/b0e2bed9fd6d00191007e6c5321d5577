@@ -1,0 +1,6 @@
+package org.abccourse.repository.master;
+
+@Repository
+public class StudentCourseRepository {
+
+}

@@ -1,0 +1,105 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("studentCourse");
+
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		
+		String sql = "select student.id, "
+				+ "			course.id, " + 
+				"			student.name, " + 
+				"            course.name " + 
+				"from student_course inner join student on student_course.student_id = student.id " + 
+				"			inner join course on student_course.course_id = course.id";
+		
+		EntityManager em = entityManagerFactory.createEntityManager();
+		Query query = em.createQuery(sql);
+		
+		List<StudentCourseEntity> studentCourseList = query.getResultList();
+		em.close();
+		
+		return studentCourseList;
+	}
+
+	@Override
+	public Object save(Object entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable saveAll(Iterable entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional findById(Object id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Object id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable findAllById(Iterable ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteById(Object id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Object entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll(Iterable entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

@@ -1,0 +1,22 @@
+package org.abccourse.repository.master;
+
+import java.util.List;
+
+import org.abcccourse.entity.master.StudentCourse;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository("studentCourseRepository")
+public interface StudentCourseRepository extends JpaRepository<StudentCourse, Integer> {
+
+
+	@Query(value = "select student.id as student_id, " + 
+			 "course.id as course_id, " + 
+			 "student.name as student_name, " + 
+			 "course.name as course_name " +
+			 "from student_course inner join student on student_course.student_id = student.id inner join " + 
+			 "course on student_course.course_id = course.id where student.name like concat ('%', :studentName, '%')", nativeQuery = true)
+	List<StudentCourse> findStudentCourseByStudentName(@Param("studentName") String studentName);
+}

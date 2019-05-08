@@ -1,0 +1,27 @@
+package org.abccourse.repositoryimpl.master;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.repository.master.StudentCourseRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentCourseRepositoryImpl implements StudentCourseRepository {
+
+	private EntityManager em;
+
+	public StudentCourseRepositoryImpl(EntityManager em) {
+		this.em = em;
+	}
+	  
+	@Override
+	public List<StudentCourseEntity> findStudentCourseByStudentName(String studentName) {
+		TypedQuery<StudentCourseEntity> query = em.createQuery("SELECT e FROM Employee e",
+				StudentCourseEntity.class);
+		return query.getResultList();
+	}
+
+}

@@ -1,0 +1,29 @@
+package org.abccourse.repository.master;
+
+import java.util.List;
+
+import org.abcccourse.entity.master.StudentCourseEntity;
+import org.abccourse.entity.CourseEntity;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+public interface CourseRepository extends CrudRepository<CourseEntity, Integer>{
+
+	@Query(value = "select * from course crs where crs.code = :code", nativeQuery = true)
+	CourseEntity findByCode(@Param("code") String code);
+	
+	@Query(value = "select * from course crs where crs.name like concat('%', :name, '%') order by crs.id desc", nativeQuery = true)
+	List<CourseEntity> findCourseByName(@Param("name") String name);
+	
+	@Query(value = "select s.id, " +
+			"c.id, " + 
+			"s.name, " + 
+			"c.name " + 
+			"from student_course sc inner join student s on sc.student_id = s.id " + 
+			"inner join course c on sc.course_id = c.id " + 
+			"where s.name like concat ('%', :studentName, '%')", nativeQuery = true)
+	List<StudentCourseEntity> findStudentCourseByStudentName(@Param("studentName") String studentName);
+	
+}

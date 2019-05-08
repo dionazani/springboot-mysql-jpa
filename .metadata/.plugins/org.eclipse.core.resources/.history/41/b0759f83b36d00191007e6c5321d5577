@@ -1,0 +1,5 @@
+package org.abccourse.controller.master;
+
+public class StudentCourseRestController {
+
+}

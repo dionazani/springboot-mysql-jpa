@@ -1,0 +1,6 @@
+package org.abccourse.service.master;
+
+public interface StudentService {
+
+	short saveStudent(StudentModel student);
+}

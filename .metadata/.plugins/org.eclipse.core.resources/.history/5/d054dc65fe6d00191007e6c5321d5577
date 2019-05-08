@@ -1,0 +1,10 @@
+package org.abccourse.repository.master;
+
+import org.springframework.stereotype.Repository;
+import org.abcccourse.entity.master.StudentCourseRepository;
+
+@Repository
+public interface StudentCourseRepository {
+
+	List<StudentCourseEntity> findStudentCourseByStudentName(String studentName);
+}

@@ -1,0 +1,6 @@
+package org.abccourse.controller.transaction;
+
+@RestController
+public class CourseRegostrationRestController {
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/dion.azani/SpringToolSuite/abc-course-workspaces/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1865927658.index
+1007983087.index
+1195341059.index
+475340285.index
+1985230835.index
+3053468431.index

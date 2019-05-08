@@ -1,0 +1,12 @@
+package org.abccourse.repository.master;
+
+import java.util.List;
+import org.abcccourse.entity.master.*;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+public interface StudentCourseRepository extends CrudRepository {
+	
+	List<StudentCourseEntity> findStudentCourseByStudentName(String studentName);
+
+}

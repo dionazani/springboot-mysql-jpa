@@ -1,0 +1,10 @@
+package org.abccourse.service.transaction;
+
+import java.util.List;
+import org.abccourse.model.transaction.CourseRegistrationModel;
+
+public interface CourseRegistrationService {
+
+	List<CourseRegistrationModel> getStudentCourseByStudentName(String studentName);
+	boolean saveCourseRegistration(int studentId, int courseId);
+}

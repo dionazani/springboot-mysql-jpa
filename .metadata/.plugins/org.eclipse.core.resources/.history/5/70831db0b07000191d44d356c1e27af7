@@ -1,0 +1,28 @@
+package org.abccourse.repository.master.impl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.abccourse.entity.Student;
+import org.abccourse.repository.StudentRpo;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional
+public class StudentRepositoryImpl implements StudentRpo {
+
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	public short addNewStudent(Student studentEntity) {
+		short isSave = 0;
+		
+		em.persist(studentEntity);
+		isSave = 1;
+		
+		return isSave;
+	}
+
+}

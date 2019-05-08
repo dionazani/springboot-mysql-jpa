@@ -1,0 +1,9 @@
+package org.abccourse.repository.master;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.abccourse.entity.StudentEntity;
+
+public interface StudentRepository extends CrudRepository<StudentEntity, Integer> {
+
+}

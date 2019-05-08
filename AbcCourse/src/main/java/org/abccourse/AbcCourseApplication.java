@@ -1,0 +1,17 @@
+package org.abccourse;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+
+@SpringBootApplication
+@ComponentScan(basePackages = {"org.abccourse.*"})
+@EntityScan("org.abccourse.*")
+public class AbcCourseApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AbcCourseApplication.class, args);
+	}
+
+}

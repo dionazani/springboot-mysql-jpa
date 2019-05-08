@@ -1,0 +1,13 @@
+package org.abccourse.controller.master;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/studentCourse")
+public class StudentCourseRestController {
+
+	private StudentCourseService studentCourseService;
+	
+	
+}

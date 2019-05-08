@@ -1,0 +1,33 @@
+package org.abccourse.service.master.impl;
+
+import java.lang.reflect.Type;
+import java.util.List;
+
+import org.abccourse.entity.Course;
+import org.abccourse.entity.Student;
+import org.abccourse.model.master.CourseModel;
+import org.abccourse.model.master.StudentModel;
+import org.abccourse.repository.StudentRepository;
+import org.abccourse.service.master.StudentService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class StudentServiceImpl implements StudentService {
+
+	@Autowired
+	private StudentRepository studentRepository;
+	
+	@Override
+	public short saveStudent(StudentModel studentModel) {
+		
+		short isSave = 0;
+		
+		ModelMapper modelMapper = new ModelMapper();
+		Type targetType = new TypeToken<Student>() {}.getType();
+		Student student = modelMapper.map(studentModel, targetType);
+		
+		return isSave;
+	}
+
+}

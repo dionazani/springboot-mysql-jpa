@@ -1,0 +1,5 @@
+package org.abccourse.service.transaction;
+
+public class CourseRegistrationService {
+
+}

@@ -1,0 +1,13 @@
+package org.abccourse.model.master;
+
+import java.sql.Timestamp;
+
+public class CourseModel {
+
+	private int id;
+	private String code;
+	private String name;
+	private long createdTime;
+	private long modifiedTime;
+	
+}

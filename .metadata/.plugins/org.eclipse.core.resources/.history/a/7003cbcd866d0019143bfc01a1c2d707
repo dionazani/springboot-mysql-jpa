@@ -1,0 +1,13 @@
+package org.abccourse.entity;
+
+public class StudentCourseEntity {
+
+	private int studentId;
+	private int courseId;
+	private String studentName;
+	private String courseName;
+	
+	
+	
+	
+}
