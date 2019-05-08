@@ -15,7 +15,6 @@ INDEX VERSION 1.131+/Users/dion.azani/SpringToolSuite/abc-course-workspaces/.met
 2274783041.index
 3316958817.index
 1018399816.index
-475340285.index
 1886337724.index
 682957569.index
 1861326374.index

@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.abccourse.entity.Student;
-import org.abccourse.repository.master.StudentRpo;
+import org.abccourse.repository.StudentRpo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
