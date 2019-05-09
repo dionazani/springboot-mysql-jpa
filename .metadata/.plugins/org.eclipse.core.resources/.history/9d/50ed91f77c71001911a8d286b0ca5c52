@@ -1,0 +1,5 @@
+package org.abccourse;
+
+public class SecurityConfig {
+
+}

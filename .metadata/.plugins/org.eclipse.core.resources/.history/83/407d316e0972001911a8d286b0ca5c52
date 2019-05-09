@@ -1,0 +1,5 @@
+package org.abccourse.config;
+
+public class BasicAuthenticationPoint {
+
+}
